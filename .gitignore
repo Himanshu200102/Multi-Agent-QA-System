@@ -1,0 +1,37 @@
+﻿# --- Python cache & build ---
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.dylib
+*.egg-info/
+.eggs/
+.build/
+build/
+dist/
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- IDE/Editor ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- OS cruft ---
+.DS_Store
+Thumbs.db
+
+# --- Secrets/Env ---
+.env
+.env.*
+
+*.iml
+.gradle/
+local.properties

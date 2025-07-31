@@ -1,0 +1,51 @@
+{
+  "34f19cdcfad07dd4977399fcba65eabb33abd13c8d66361732b4dd79e8c6c219": {
+    "goal": "Toggle WiFi off then back on",
+    "steps": [
+      {
+        "id": 1,
+        "description": "open_settings",
+        "intent": "open_settings",
+        "target": null,
+        "params": {}
+      },
+      {
+        "id": 2,
+        "description": "tap Network & Internet",
+        "intent": "tap",
+        "target": "Network & Internet",
+        "params": {}
+      },
+      {
+        "id": 3,
+        "description": "toggle Wi\u2011Fi",
+        "intent": "toggle",
+        "target": "Wi\u2011Fi",
+        "params": {}
+      },
+      {
+        "id": 4,
+        "description": "wait",
+        "intent": "wait",
+        "target": null,
+        "params": {
+          "seconds": 1
+        }
+      },
+      {
+        "id": 5,
+        "description": "toggle Wi\u2011Fi",
+        "intent": "toggle",
+        "target": "Wi\u2011Fi",
+        "params": {}
+      },
+      {
+        "id": 6,
+        "description": "verify Wi\u2011Fi",
+        "intent": "verify",
+        "target": "Wi\u2011Fi",
+        "params": {}
+      }
+    ]
+  }
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "event": "plan",
+    "payload": {
+      "goal": "Toggle WiFi off then back on",
+      "steps": [
+        {
+          "id": 1,
+          "description": "open_settings",
+          "intent": "open_settings",
+          "target": null,
+          "params": {}
+        },
+        {
+          "id": 2,
+          "description": "tap Network & Internet",
+          "intent": "tap",
+          "target": "Network & Internet",
+          "params": {}
+        },
+        {
+          "id": 3,
+          "description": "toggle Wi‑Fi",
+          "intent": "toggle",
+          "target": "Wi‑Fi",
+          "params": {}
+        },
+        {
+          "id": 4,
+          "description": "wait",
+          "intent": "wait",
+          "target": null,
+          "params": {
+            "seconds": 1
+          }
+        },
+        {
+          "id": 5,
+          "description": "toggle Wi‑Fi",
+          "intent": "toggle",
+          "target": "Wi‑Fi",
+          "params": {}
+        },
+        {
+          "id": 6,
+          "description": "verify Wi‑Fi",
+          "intent": "verify",
+          "target": "Wi‑Fi",
+          "params": {}
+        }
+      ]
+    }
+  },
+  {
+    "event": "action",
+    "payload": {
+      "step_id": 1,
+      "intent": "open_settings",
+      "target": null,
+      "ok": true,
+      "message": "Opened Settings",
+      "observation": {
+        "screen": "settings",
+        "ui_tree": {
+          "list": [
+            "Network & Internet",
+            "Display",
+            "Battery"
+          ]
+        },
+        "info": {
+          "wifi_on": true
+        }
+      }
+    }
+  },
+  {
+    "event": "verify",
+    "payload": {
+      "step_id": 1,
+      "passed": true,
+      "reason": "No specific rule",
+      "need_replan": false
+    }
+  },
+  {
+    "event": "action",
+    "payload": {
+      "step_id": 2,
+      "intent": "tap",
+      "target": "Network & Internet",
+      "ok": true,
+      "message": "Opened Network & Internet",
+      "observation": {
+        "screen": "network",
+        "ui_tree": {
+          "toggles": {
+            "Wi‑Fi": true
+          }
+        },
+        "info": {
+          "wifi_on": true
+        }
+      }
+    }
+  },
+  {
+    "event": "verify",
+    "payload": {
+      "step_id": 2,
+      "passed": true,
+      "reason": "No specific rule",
+      "need_replan": false
+    }
+  },
+  {
+    "event": "action",
+    "payload": {
+      "step_id": 3,
+      "intent": "toggle",
+      "target": "Wi‑Fi",
+      "ok": true,
+      "message": "Wi‑Fi set to False",
+      "observation": {
+        "screen": "network",
+        "ui_tree": {
+          "toggles": {
+            "Wi‑Fi": false
+          }
+        },
+        "info": {
+          "wifi_on": false
+        }
+      }
+    }
+  },
+  {
+    "event": "verify",
+    "payload": {
+      "step_id": 3,
+      "passed": true,
+      "reason": "Toggled Wi‑Fi",
+      "need_replan": false
+    }
+  },
+  {
+    "event": "action",
+    "payload": {
+      "step_id": 4,
+      "intent": "wait",
+      "target": null,
+      "ok": true,
+      "message": "Waited",
+      "observation": {
+        "screen": "network",
+        "ui_tree": {
+          "toggles": {
+            "Wi‑Fi": false
+          }
+        },
+        "info": {
+          "wifi_on": false
+        }
+      }
+    }
+  },
+  {
+    "event": "verify",
+    "payload": {
+      "step_id": 4,
+      "passed": true,
+      "reason": "No specific rule",
+      "need_replan": false
+    }
+  },
+  {
+    "event": "action",
+    "payload": {
+      "step_id": 5,
+      "intent": "toggle",
+      "target": "Wi‑Fi",
+      "ok": true,
+      "message": "Wi‑Fi set to True",
+      "observation": {
+        "screen": "network",
+        "ui_tree": {
+          "toggles": {
+            "Wi‑Fi": true
+          }
+        },
+        "info": {
+          "wifi_on": true
+        }
+      }
+    }
+  },
+  {
+    "event": "verify",
+    "payload": {
+      "step_id": 5,
+      "passed": true,
+      "reason": "Toggled Wi‑Fi",
+      "need_replan": false
+    }
+  },
+  {
+    "event": "action",
+    "payload": {
+      "step_id": 6,
+      "intent": "verify",
+      "target": "Wi‑Fi",
+      "ok": false,
+      "message": "Unknown intent verify",
+      "observation": {
+        "screen": "network",
+        "ui_tree": {
+          "toggles": {
+            "Wi‑Fi": true
+          }
+        },
+        "info": {
+          "wifi_on": true
+        }
+      }
+    }
+  },
+  {
+    "event": "verify",
+    "payload": {
+      "step_id": 6,
+      "passed": true,
+      "reason": "Wi‑Fi desired=True actual=True",
+      "need_replan": false
+    }
+  },
+  {
+    "event": "finish",
+    "payload": {
+      "status": "passed"
+    }
+  }
+]
